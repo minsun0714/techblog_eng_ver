@@ -1,6 +1,4 @@
 {
-	"experimentalTernaries": false,
 	"useTabs": true,
-	"singleQuote": true,
-	"bracketSameLine": true
+	"singleQuote": true
 }
