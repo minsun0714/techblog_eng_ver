@@ -1,10 +1,6 @@
+import { NavItems } from '@/util/enum';
 import Link from 'next/link';
 import React from 'react';
-
-enum NavItems {
-	'home' = '/',
-	'posts' = '/posts',
-}
 
 const Header = () => {
 	return (
