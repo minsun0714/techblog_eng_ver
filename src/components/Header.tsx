@@ -1,6 +1,5 @@
-import { NavItems } from '@/util/enum';
 import Link from 'next/link';
-import React from 'react';
+import { NavItems } from '@/util/enum';
 
 const Header = () => {
 	return (
