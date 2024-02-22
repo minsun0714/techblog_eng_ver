@@ -3,10 +3,10 @@ import { NavItems } from '@/util/enum';
 
 const Header = () => {
 	return (
-		<header className="flex flex-row items-center justify-around h-16 border-b border-gray-light">
+		<header className="flex h-16 flex-row items-center justify-around border-b border-gray-light">
 			<Link
 				href={NavItems.home}
-				className="flex justify-center w-1/6 m-4 text-gray text-nowrap"
+				className="m-4 flex w-1/6 justify-center text-nowrap text-gray"
 			>
 				Tech Blog_Jasmine
 			</Link>
