@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import MyInfo from '@/components/MyInfo';
-import ProfileImage from '../../public/profile.jpeg';
+import ProfileImage from '@/public/profile.jpg';
 
 export default async function Home() {
 	return (
