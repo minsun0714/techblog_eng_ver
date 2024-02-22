@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import MyInfo from '@/components/MyInfo';
+import Card from '@/components/Card';
 import ProfileImage from '../../public/profile.jpeg';
+import DummyImage from '../../public/dummyImg.png';
 
 export default async function Home() {
 	return (
