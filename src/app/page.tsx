@@ -1,9 +1,22 @@
+import Image from 'next/image';
+import MyInfo from '@/components/MyInfo';
+import ProfileImage from '../../public/profile.jpeg';
+
 export default async function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<h1 className="text-black px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800">
-				tech blog
-			</h1>
+		<main className="flex h-screen flex-col items-center justify-between p-24">
+			<section className="flex flex-col items-center justify-center">
+				<div>
+					<Image
+						alt="profile image"
+						src={ProfileImage}
+						width={400}
+						height={400}
+						className="border border-gray-light rounded-full object-cover h-80 w-80 "
+					/>
+				</div>
+				<MyInfo />
+			</section>
 		</main>
 	);
 }
