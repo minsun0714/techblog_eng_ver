@@ -5,7 +5,7 @@ import { SocialLink } from '@/util/enum';
 const MyInfo = () => {
 	return (
 		<div>
-			<ul className="flex flex-col justify-center items-center text-xl text-gray mt-11 gap-y-4">
+			<ul className="mt-11 flex flex-col items-center justify-center gap-y-4 text-xl text-gray">
 				<li>
 					<label>Lee Minsun (Jasmine)</label>
 				</li>

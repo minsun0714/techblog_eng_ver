@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import MyInfo from '@/components/MyInfo';
-import ProfileImage from '../../public/profile.jpeg';
+import ProfileImage from 'public/profile.jpeg';
 
 export default async function Home() {
 	return (
@@ -12,7 +12,7 @@ export default async function Home() {
 						src={ProfileImage}
 						width={400}
 						height={400}
-						className="border border-gray-light rounded-full object-cover h-80 w-80 "
+						className="h-80 w-80 rounded-full border border-gray-light object-cover "
 					/>
 				</div>
 				<MyInfo />
