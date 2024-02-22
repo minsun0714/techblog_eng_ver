@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import profileImage from '../../public/profile.jpeg';
+import MyInfo from '@/components/MyInfo';
+import ProfileImage from '../../public/profile.jpeg';
 
 export default async function Home() {
 	return (
@@ -8,15 +9,13 @@ export default async function Home() {
 				<div>
 					<Image
 						alt="profile image"
-						src={profileImage}
+						src={ProfileImage}
 						width={400}
 						height={400}
 						className="border border-gray-light rounded-full object-cover h-80 w-80 "
 					/>
 				</div>
-				<div>
-					<h1>Lee Minsun</h1>
-				</div>
+				<MyInfo />
 			</section>
 		</main>
 	);
