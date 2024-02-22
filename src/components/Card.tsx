@@ -11,15 +11,15 @@ const Card = ({ imgUrl, title, date }: CardProps) => {
 	return (
 		<>
 			<Image
-				className="border border-gray-light w-[450px] rounded-t-2xl h-[220px] object-cover"
+				className="h-[220px] w-[450px] rounded-t-2xl border border-gray-light object-cover"
 				src={imgUrl}
 				alt={imgUrl.src.slice(imgUrl.src.lastIndexOf('/') + 1)}
 			/>
-			<div className="flex flex-col justify-stretch items-center pt-3 border border-gray-light w-[450px] h-24 rounded-b-2xl relative">
-				<label className="w-[430px] pl-4 absolute">
+			<div className="relative flex h-24 w-[450px] flex-col items-center justify-stretch rounded-b-2xl border border-gray-light pt-3">
+				<label className="absolute w-[430px] pl-4">
 					{title.length <= 60 ? title : title.slice(0, 60) + '..'}
 				</label>
-				<time className="w-[450px] pr-8 mt-12 text-end absolute text-gray-light">
+				<time className="absolute mt-12 h-4 w-[450px] pr-8 text-end text-gray-light">
 					{date}
 				</time>
 			</div>
