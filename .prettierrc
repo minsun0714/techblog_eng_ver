@@ -5,5 +5,12 @@
 		"prettier-plugin-tailwindcss",
 		"@trivago/prettier-plugin-sort-imports"
 	],
-	"importOrder": ["^next", "^react", "^@", "\\.(png|jpe?g|gif|svg|webp)$"]
+	"importOrder": [
+		"^next",
+		"^react",
+		"^@.*components",
+		"^@",
+		"^@.*css",
+		"\\.(png|jpe?g|gif|svg|webp)$"
+	]
 }
