@@ -10,8 +10,8 @@ const config: Config = {
 		screens: {
 			sm: '480px',
 			md: '768px',
-			lg: '1120px',
-			xl: '1580px',
+			lg: '976px',
+			xl: '1440px',
 		},
 		colors: {
 			black: '#000',
