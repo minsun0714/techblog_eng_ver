@@ -1,3 +1,4 @@
+import { IoIosArrowBack } from 'react-icons/io';
 import getSideMenuData from '@/service/fetchMenu';
 
 const RecentPostsLayout = async ({
@@ -10,7 +11,10 @@ const RecentPostsLayout = async ({
 
 	return (
 		<section className="flex flex-row">
-			<aside className="flex h-screen w-96 flex-col items-start justify-start bg-black text-gray-light">
+			<aside className="flex h-screen w-96 flex-col bg-black text-gray-light">
+				<div className="flex w-full justify-end p-4">
+					<IoIosArrowBack size={20} />
+				</div>
 				<ul className="m-16">
 					{menuData.map(
 						([menu, subMenuList]: [string, string[]], i: number) => {
