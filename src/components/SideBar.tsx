@@ -8,7 +8,7 @@ export type SideBarProps = {
 
 const SideBar = ({ menuData }: SideBarProps) => {
 	return (
-		<aside className="flex h-screen w-96 flex-col bg-black text-gray-light">
+		<aside className="flex h-screen min-w-96 flex-col overflow-y-scroll whitespace-nowrap bg-black text-gray-light">
 			<ul className="m-16">
 				{menuData.map(([menu, subMenuList]: MenuDataTuple, i: number) => {
 					return (
