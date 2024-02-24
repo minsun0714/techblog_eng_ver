@@ -3,7 +3,7 @@ import { NavItems } from '@/util/enum';
 
 const Header = () => {
 	return (
-		<header className="flex h-16 flex-row items-center justify-around border-b border-gray-light">
+		<header className="fixed z-50 flex h-16 w-screen flex-row items-center justify-around border-b border-gray-light bg-white">
 			<Link
 				href={NavItems.home}
 				className="m-4 flex w-1/6 justify-center text-nowrap text-gray"
