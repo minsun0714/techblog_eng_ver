@@ -1,6 +1,10 @@
 const { promises } = require('fs');
 
-const getSideMenuData = async () => {
+type MenuData = {
+	[key: string]: string[];
+};
+
+const getSideMenuData = async (): Promise<MenuData> => {
 	const json = await promises
 		.readFile('menu.json', 'utf-8')
 		.catch(console.error);
