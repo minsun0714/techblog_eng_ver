@@ -7,29 +7,12 @@ type CardProps = {
 	title: string;
 };
 
-const bigCardStyle = {
-	height: 'h-[180px]',
-	width: 'w-1000px',
-	minWidth: 'min-w-[1002px]',
-	bottomHeight: 'h-40',
-	bottomMinWidth: 'w-[1000px]',
-};
-
-const smallCardStyle = {
-	height: 'h-[220px]',
-	width: 'w-380px',
-	minWidth: 'min-w-[382px]',
-	bottomHeight: 'h-24',
-	bottomMinWidth: 'w-[380px]',
-};
-
 const Card = ({ isBig, imgUrl, title }: CardProps) => {
 	return (
 		<div
 			className={
-				'relative flex' +
-				` ${isBig ? bigCardStyle.height : smallCardStyle.height} ${isBig ? bigCardStyle.minWidth : smallCardStyle.minWidth} ` +
-				'flex-col justify-end'
+				'relative flex flex-col justify-end' +
+				` ${isBig ? 'h-[180px]' : 'h-[220px]'} ${isBig ? 'min-w-[1002px]' : 'min-w-[382px]'} `
 			}
 		>
 			<Image
@@ -40,16 +23,14 @@ const Card = ({ isBig, imgUrl, title }: CardProps) => {
 			<div className="absolute rounded-b-2xl border border-gray-light bg-white ">
 				<div
 					className={
-						'relative flex' +
-						` ${isBig ? bigCardStyle.bottomHeight : smallCardStyle.bottomHeight} ${isBig ? bigCardStyle.bottomMinWidth : smallCardStyle.bottomMinWidth} ` +
-						'flex-col items-center justify-stretch pt-3'
+						'relative flex flex-col items-center justify-stretch pt-3' +
+						` ${isBig ? 'h-40' : 'h-24'} ${isBig ? 'w-[1000px]' : 'w-[380px]'} `
 					}
 				>
 					<label
 						className={
-							'absolute' +
-							` ${isBig ? bigCardStyle.minWidth : smallCardStyle.minWidth} ` +
-							'pl-10'
+							'absolute pl-10' +
+							` ${isBig ? 'min-w-[1002px]' : 'min-w-[382px]'} `
 						}
 					>
 						{title.length <= 60 ? title : title.slice(0, 60) + '..'}
