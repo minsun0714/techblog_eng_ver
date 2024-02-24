@@ -1,0 +1,10 @@
+{
+	"lanuage & superset": {
+		"javascript": "javascript",
+		"typescript": "typescript"
+	},
+	"algorithm": {
+		"leetcode": "leetcode",
+		"Baekjoon": "Baekjoon"
+	}
+}
