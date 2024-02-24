@@ -5,7 +5,7 @@ import DummyImage from 'public/dummyImg.png';
 const DummyCards = () => {
 	return (
 		<li className="flex flex-col items-center justify-center">
-			<Card imgUrl={DummyImage} title="card" date="2023.02.23" />
+			<Card imgUrl={DummyImage} title="card" />
 		</li>
 	);
 };
