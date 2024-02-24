@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import MyInfo from '@/components/MyInfo';
+import RecentPostsLayout from '@/app/recentPosts/layout';
+import RecentPostsPage from '@/app/recentPosts/page';
 import ProfileImage from 'public/profile.jpeg';
 
 export default async function Home() {
@@ -16,6 +18,9 @@ export default async function Home() {
 					/>
 				</div>
 				<MyInfo />
+				<RecentPostsLayout>
+					<RecentPostsPage />
+				</RecentPostsLayout>
 			</section>
 		</main>
 	);
