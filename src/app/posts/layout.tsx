@@ -10,10 +10,12 @@ const RecentPostsLayout = async ({
 	const menuData = Object.entries(data);
 
 	return (
-		<section className="flex flex-row">
+		<div className="flex h-screen flex-row">
 			<SideBar menuData={menuData} />
-			{children}
-		</section>
+			<main className="flex w-full flex-col items-center justify-center overflow-y-scroll pt-[700px]">
+				{children}
+			</main>
+		</div>
 	);
 };
 export default RecentPostsLayout;
