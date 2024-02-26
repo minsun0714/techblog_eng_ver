@@ -8,8 +8,8 @@ export type SideBarProps = {
 
 const SideBar = ({ menuData }: SideBarProps) => {
 	return (
-		<aside className="w-100 sticky flex flex-col whitespace-nowrap bg-black text-gray-light">
-			<ul className="mx-20 my-28">
+		<aside className="sticky top-0 hidden h-screen flex-col whitespace-nowrap bg-black text-gray-light xl:flex xl:min-w-[400px] xl:justify-start">
+			<ul className="mx-16 my-24">
 				{menuData.map(([menu, subMenuList]: MenuDataTuple, i: number) => {
 					return (
 						<li key={i} className="my-4">
