@@ -1,4 +1,3 @@
-import styles from './posts.module.css';
 import SideBar from '@/components/SideBar';
 import getSideMenuData from '@/service/fetchMenu';
 
@@ -13,9 +12,7 @@ const RecentPostsLayout = async ({
 	return (
 		<div className="flex">
 			<SideBar menuData={menuData} />
-			<main className="flex w-full flex-grow flex-col items-center justify-center">
-				{children}
-			</main>
+			<main className="flex w-full flex-col">{children}</main>
 		</div>
 	);
 };
