@@ -12,7 +12,7 @@ const Card = ({ isBig, imgUrl, title }: CardProps) => {
 		<div
 			className={
 				'relative flex flex-col justify-end' +
-				` ${isBig ? 'h-[180px]' : 'h-[220px]'} ${isBig ? 'min-w-[1002px]' : 'min-w-[382px]'} `
+				` ${isBig ? 'h-[400px]' : 'h-[220px]'} ${isBig ? 'w-screen' : 'w-[382px]'} ${isBig ? 'lg:w-[972px]' : 'lg:w-[382px]'} `
 			}
 		>
 			<Image
@@ -20,17 +20,16 @@ const Card = ({ isBig, imgUrl, title }: CardProps) => {
 				src={imgUrl}
 				alt={imgUrl.src.slice(imgUrl.src.lastIndexOf('/') + 1)}
 			/>
-			<div className="absolute rounded-b-2xl border border-gray-light bg-white ">
+			<div className="absolute rounded-b-2xl border border-gray-light bg-white">
 				<div
 					className={
-						'relative flex flex-col items-center justify-stretch pt-3' +
-						` ${isBig ? 'h-40' : 'h-24'} ${isBig ? 'w-[1000px]' : 'w-[380px]'} `
+						'relative flex h-24 flex-col items-center justify-stretch pt-3' +
+						` ${isBig && 'md:h-32'} ${isBig && 'lg:h-40'} ${isBig ? 'w-[970px]' : 'w-[380px]'} `
 					}
 				>
 					<label
 						className={
-							'absolute pl-10' +
-							` ${isBig ? 'min-w-[1002px]' : 'min-w-[382px]'} `
+							'absolute pl-10' + ` ${isBig ? 'w-[970px]' : 'w-[382px]'} `
 						}
 					>
 						{title.length <= 60 ? title : title.slice(0, 60) + '..'}

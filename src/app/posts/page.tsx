@@ -4,13 +4,14 @@ import DummyImg from 'public/dummyImg.png';
 
 const PostsPage = () => {
 	return (
-		<main className="ml-64 flex min-h-screen flex-col items-end justify-center pt-80">
-			<ul className="flex flex-col">
-				<li className="py-[300px]">
-					<Card isBig={true} imgUrl={DummyImg} title="제목" />
-				</li>
-			</ul>
-		</main>
+		<ul className="flex flex-col items-center justify-center gap-y-96 pb-40 pt-96">
+			<li>
+				<Card isBig={true} imgUrl={DummyImg} title="제목" />
+			</li>
+			<li>
+				<Card isBig={true} imgUrl={DummyImg} title="제목" />
+			</li>
+		</ul>
 	);
 };
 
