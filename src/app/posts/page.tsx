@@ -4,11 +4,11 @@ import DummyImg from 'public/dummyImg.png';
 
 const PostsPage = () => {
 	return (
-		<ul className="flex flex-col items-center justify-center gap-y-36 pt-96">
-			<li className="py-52">
+		<ul className="flex flex-col items-center justify-center gap-y-96 pb-40 pt-96">
+			<li>
 				<Card isBig={true} imgUrl={DummyImg} title="제목" />
 			</li>
-			<li className="py-52">
+			<li>
 				<Card isBig={true} imgUrl={DummyImg} title="제목" />
 			</li>
 		</ul>
