@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '@/common/components/Card';
+import Card from '@/app/(common)/components/Card';
 import DummyImage from 'public/dummyImg.png';
 
 const DummyCards = () => {
