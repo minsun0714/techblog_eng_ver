@@ -1,3 +1,4 @@
+import { Route } from 'next';
 import Link from 'next/link';
 import { NavItems } from '@/util/enum';
 
@@ -14,7 +15,7 @@ const Header = () => {
 				<ul className="flex flex-row">
 					{Object.entries(NavItems).map(([label, href]) => (
 						<li key={label} className="m-6 text-gray">
-							<Link href={href}>{label}</Link>
+							<Link href={href as Route}>{label}</Link>
 						</li>
 					))}
 				</ul>
