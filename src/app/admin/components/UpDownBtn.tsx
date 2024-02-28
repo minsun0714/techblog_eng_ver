@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { GoChevronUp, GoChevronDown } from 'react-icons/go';
 
 type UpDownBtnProps = {
