@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import MyInfo from '@/app/(common)/components/MyInfo';
-import RecentPostsLayout from '@/app/recentPosts/layout';
-import RecentPostsPage from '@/app/recentPosts/page';
+import RecentPostsLayout from '@/app/(recentPosts)/layout';
+import RecentPostsPage from '@/app/(recentPosts)/page';
 import ProfileImage from 'public/profile.jpeg';
 
 export default async function Home() {
