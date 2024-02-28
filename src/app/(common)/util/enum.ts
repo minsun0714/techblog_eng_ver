@@ -1,6 +1,7 @@
 export enum NavItems {
 	'home' = '/',
 	'posts' = '/posts',
+	'admin' = '/admin',
 }
 
 export enum SocialLink {

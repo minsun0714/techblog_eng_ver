@@ -1,4 +1,4 @@
-import SideBar from '@/components/SideBar';
+import SideBar from '@/app/posts/[[...slug]]/components/SideBar';
 import getSideMenuData from '@/service/fetchMenu';
 
 const RecentPostsLayout = async ({
@@ -10,7 +10,7 @@ const RecentPostsLayout = async ({
 	const menuData = Object.entries(data);
 
 	return (
-		<div className="flex">
+		<div className="flex w-screen">
 			<SideBar menuData={menuData} />
 			<main className="flex w-full flex-col">{children}</main>
 		</div>

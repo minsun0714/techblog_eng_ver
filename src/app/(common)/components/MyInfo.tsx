@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { SocialLink } from '@/util/enum';
+import { SocialLink } from '@/app/(common)/util/enum';
 
 const MyInfo = () => {
 	return (
