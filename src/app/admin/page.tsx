@@ -1,12 +1,14 @@
 'use client';
 
+import Button from './components/Button';
+import Input from './components/Input';
+import Select from './components/Select';
+import UpDownBtn from './components/UpDownBtn';
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { GoChevronUp } from 'react-icons/go';
-import { GoChevronDown } from 'react-icons/go';
 import MDEditor from '@uiw/react-md-editor';
 
-type FormElements = {
+export type FormElements = {
 	title: string;
 	category1: string;
 	category2: string;
@@ -27,52 +29,20 @@ const AdminPage = () => {
 		>
 			{isOpen && (
 				<>
-					<div>
-						<label className="text-gray-mid-light">title</label>
-						<input
-							{...register('title', { required: true })}
-							className="h-10 w-full rounded-sm border border-gray-mid-light p-3
-			focus:outline-gray
-			"
-						/>
-					</div>
+					<Input register={register} />
 					<ul className="flex w-full flex-row gap-x-12 focus:outline-gray">
-						<li className="flex w-full flex-col">
-							<label className="text-gray-mid-light">category 1</label>
-							<input
-								{...register('category1', { required: true })}
-								className="h-10 rounded-sm border border-gray-mid-light focus:outline-gray"
-							/>
-						</li>
-						<li className="flex w-full flex-col">
-							<label className="text-gray-mid-light">category 2</label>
-							<input
-								{...register('category2', { required: true })}
-								className="h-10 rounded-sm border border-gray-mid-light focus:outline-gray"
-							/>
-						</li>
+						<Select register={register} name="category1" />
+						<Select register={register} name="category2" />
 					</ul>
 					<MDEditor value={value} onChange={setValue} />
 				</>
 			)}
-			<button
-				onClick={(e) => {
-					e.preventDefault();
-					setIsOpen(!isOpen);
-				}}
-				className="flex justify-center rounded-sm bg-gray-light"
-			>
-				{isOpen ? <GoChevronUp /> : <GoChevronDown />}
-			</button>
+			<UpDownBtn isOpen={isOpen} setIsOpen={setIsOpen} />
 			<MDEditor.Markdown
 				source={value}
 				style={{ overflowY: 'scroll', height: '85vh' }}
 			/>
-			<div className="flex justify-center">
-				<button className="h-16 w-60 rounded-md bg-gray text-white">
-					submit
-				</button>
-			</div>
+			<Button />
 		</form>
 	);
 };
