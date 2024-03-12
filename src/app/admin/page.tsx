@@ -30,10 +30,10 @@ const AdminPage = () => {
 			{isOpen && (
 				<>
 					<Input {...register('title')} />
-					{/* <ul className="flex w-full flex-row gap-x-12 focus:outline-gray">
-						<Select register={register} name="category1" />
-						<Select register={register} name="category2" />
-					</ul> */}
+					<ul className="flex w-full flex-row gap-x-12 focus:outline-gray">
+						<Select {...register('category1')} />
+						<Select {...register('category2')} />
+					</ul>
 					<MDEditor value={value} onChange={setValue} />
 				</>
 			)}
