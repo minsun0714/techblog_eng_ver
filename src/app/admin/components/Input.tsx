@@ -1,21 +1,19 @@
-import { FormElements } from '../page';
-import React from 'react';
-import { UseFormRegister } from 'react-hook-form';
+import React, { forwardRef, InputHTMLAttributes } from 'react';
 
-type InputProps = {
-	register: UseFormRegister<FormElements>;
-};
-
-const Input = ({ register }: InputProps) => {
+const Input = forwardRef<
+	HTMLInputElement,
+	InputHTMLAttributes<HTMLInputElement>
+>((props, ref) => {
 	return (
 		<div>
 			<label className="text-gray-mid-light">title</label>
 			<input
-				{...register('title', { required: true })}
+				{...props}
+				ref={ref}
 				className="h-10 w-full rounded-sm border border-gray-mid-light p-3 focus:outline-gray"
 			/>
 		</div>
 	);
-};
+});
 
 export default Input;
