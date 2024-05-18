@@ -1,10 +1,14 @@
 import React from 'react';
 
-const Button = () => {
+type ButtonType = {
+	text: string;
+};
+
+const Button = ({ text }: ButtonType) => {
 	return (
 		<div className="flex justify-center">
 			<button className="h-16 w-60 rounded-md bg-gray text-white">
-				submit
+				{text}
 			</button>
 		</div>
 	);

@@ -1,8 +1,8 @@
 'use client';
 
 import Button from '../(common)/components/Button';
-import Input from '../(common)/components/Input';
 import Form from './components/Form';
+import Input from './components/Input';
 import Select from './components/Select';
 import UpDownBtn from './components/UpDownBtn';
 import React, { useState } from 'react';
@@ -35,7 +35,7 @@ const AdminPage = () => {
 				source={value}
 				style={{ overflowY: 'scroll', height: '85vh' }}
 			/>
-			<Button />
+			<Button text="submit" />
 		</Form>
 	);
 };

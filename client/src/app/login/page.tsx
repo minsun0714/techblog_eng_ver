@@ -1,4 +1,5 @@
 import Button from '../(common)/components/Button';
+import Input from './components/Input';
 
 const AuthPage = () => {
 	const handleLogin = async (formData: FormData) => {
@@ -13,12 +14,10 @@ const AuthPage = () => {
 	return (
 		<form action={handleLogin}>
 			<div className="my-8">
-				<label>아이디</label>
-				<input className="h-10 w-full rounded-sm border border-gray-mid-light p-3 focus:outline-gray" />
-				<label>비밀번호</label>
-				<input className="h-10 w-full rounded-sm border border-gray-mid-light p-3 focus:outline-gray" />
+				<Input label="아이디" name="email" />
+				<Input label="비밀번호" name="password" />
 			</div>
-			<Button />
+			<Button text="login" />
 		</form>
 	);
 };
