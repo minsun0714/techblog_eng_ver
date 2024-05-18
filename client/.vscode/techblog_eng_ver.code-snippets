@@ -15,10 +15,6 @@
 	"rfc": {
 		"prefix": "rfc",
 		"body": [
-			"import React from 'react';",
-			"",
-			"type ${1:${TM_FILENAME_BASE}}Props = {};",
-			"",
 			"const ${1:${TM_FILENAME_BASE}} = () => {",
 			"  return (",
 			"    <div>",
