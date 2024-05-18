@@ -1,8 +1,8 @@
 'use client';
 
+import Input from '../(common)/components/Input';
 import Button from './components/Button';
 import Form from './components/Form';
-import Input from './components/Input';
 import Select from './components/Select';
 import UpDownBtn from './components/UpDownBtn';
 import React, { useState } from 'react';
