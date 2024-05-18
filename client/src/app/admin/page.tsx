@@ -1,6 +1,6 @@
 'use client';
 
-import Button from './components/Button';
+import Button from '../(common)/components/Button';
 import Form from './components/Form';
 import Input from './components/Input';
 import Select from './components/Select';
@@ -35,7 +35,7 @@ const AdminPage = () => {
 				source={value}
 				style={{ overflowY: 'scroll', height: '85vh' }}
 			/>
-			<Button />
+			<Button text="submit" />
 		</Form>
 	);
 };
