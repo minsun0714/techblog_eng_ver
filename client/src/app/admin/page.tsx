@@ -3,6 +3,7 @@
 import Button from './components/Button';
 import Form from './components/Form';
 import Input from './components/Input';
+import Select from './components/Select';
 import UpDownBtn from './components/UpDownBtn';
 import React, { useState } from 'react';
 import MDEditor from '@uiw/react-md-editor';
@@ -23,8 +24,8 @@ const AdminPage = () => {
 				<>
 					<Input />
 					<ul className="flex w-full flex-row gap-x-12 focus:outline-gray">
-						{/* <Select register={register} name="category1" />
-						<Select register={register} name="category2" /> */}
+						<Select name="category1" />
+						<Select name="category2" />
 					</ul>
 					<MDEditor value={value} onChange={setValue} />
 				</>

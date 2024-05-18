@@ -1,20 +1,19 @@
-import { FormElements } from '../page';
 import React from 'react';
-import { UseFormRegister } from 'react-hook-form';
 
-type SelectProps = {
-	register: UseFormRegister<FormElements>;
-	name: 'category1' | 'category2';
+type SelectType = {
+	name: string;
 };
 
-const Select = ({ register, name }: SelectProps) => {
+const Select = ({ name }: SelectType) => {
 	return (
 		<li className="flex w-full flex-col">
 			<label className="text-gray-mid-light">{name}</label>
-			<select
-				{...register(name, { required: true })}
-				className="h-10 rounded-sm border border-gray-mid-light focus:outline-gray"
-			/>
+			<select className="h-10 rounded-sm border border-gray-mid-light focus:outline-gray">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			</select>
 		</li>
 	);
 };
