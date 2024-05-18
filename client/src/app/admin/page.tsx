@@ -1,7 +1,7 @@
 'use client';
 
+import Button from '../(common)/components/Button';
 import Input from '../(common)/components/Input';
-import Button from './components/Button';
 import Form from './components/Form';
 import Select from './components/Select';
 import UpDownBtn from './components/UpDownBtn';
