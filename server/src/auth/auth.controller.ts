@@ -17,7 +17,7 @@ export class AuthController {
   @Post('login')
   @UseFilters(HttpExceptionFilter)
   async signIn(@Body() signInDto, @Res() res: Response) {
-    const accessToken = await this.authService.signIn(
+    const { access_token: accessToken } = await this.authService.signIn(
       signInDto.username,
       signInDto.password,
     );
@@ -25,10 +25,8 @@ export class AuthController {
     if (!accessToken) {
       throw new UnauthorizedException('Invalid credentials');
     }
-    res.cookie('accessToken', accessToken, {
-      httpOnly: true,
-      sameSite: 'strict',
-    });
+    console.log(accessToken);
+    res.setHeader('Authorization', `Bearer ${accessToken}`);
     return res.status(201).json({ message: 'Login successful' });
   }
 }
