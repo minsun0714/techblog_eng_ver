@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '../(common)/components/Button';
 import Input from './components/Input';
 import useHandleLogin from '@/service/useHandleLogin';
