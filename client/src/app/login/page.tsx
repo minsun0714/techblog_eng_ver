@@ -6,15 +6,23 @@ const AuthPage = () => {
 		'use server';
 
 		const authInfo = {
-			email: formData.get('email'),
+			username: formData.get('username'),
 			password: formData.get('password'),
 		};
-		console.log(authInfo);
+		const response = await fetch('http://localhost:8000/auth/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(authInfo),
+		});
+		const data = await response.json();
+		console.log('📢[page.tsx:21]: data: ', data);
 	};
 	return (
 		<form action={handleLogin}>
 			<div className="my-8">
-				<Input label="아이디" name="email" />
+				<Input label="아이디" name="username" />
 				<Input label="비밀번호" name="password" />
 			</div>
 			<Button text="login" />
