@@ -17,22 +17,18 @@ export class AuthController {
   @Post('login')
   @UseFilters(HttpExceptionFilter)
   async signIn(@Body() signInDto, @Res() res: Response) {
-    try {
-      const accessToken = await this.authService.signIn(
-        signInDto.username,
-        signInDto.password,
-      );
+    const accessToken = await this.authService.signIn(
+      signInDto.username,
+      signInDto.password,
+    );
 
-      if (!accessToken) {
-        throw new UnauthorizedException('Invalid credentials');
-      }
-      res.cookie('accessToken', accessToken, {
-        httpOnly: true,
-        sameSite: 'strict',
-      });
-      return res.status(201).json({ message: 'test' });
-    } catch (error) {
-      throw error;
+    if (!accessToken) {
+      throw new UnauthorizedException('Invalid credentials');
     }
+    res.cookie('accessToken', accessToken, {
+      httpOnly: true,
+      sameSite: 'strict',
+    });
+    return res.status(201).json({ message: 'Login successful' });
   }
 }
