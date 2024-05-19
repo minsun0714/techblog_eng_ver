@@ -12,6 +12,7 @@ export class UsersService {
   };
 
   async getUser(username: string): Promise<User | undefined> {
+    console.log('📢[users.service.ts:15]: username: ', username);
     if (username === this.user.username) return this.user;
   }
 }

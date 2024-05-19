@@ -1,29 +1,38 @@
 import {
   Body,
   Controller,
-  HttpCode,
-  HttpStatus,
   Post,
   Res,
+  UnauthorizedException,
+  UseFilters,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { Response } from 'express';
+import { HttpExceptionFilter } from './http-exception.filter';
 
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @HttpCode(HttpStatus.OK)
   @Post('login')
-  signIn(@Body() signInDto, @Res() res: Response) {
-    const accessToken = this.authService.signIn(
-      signInDto.username,
-      signInDto.password,
-    );
-    res.cookie('accessToken', accessToken, {
-      httpOnly: true,
-      sameSite: 'strict',
-    });
-    return res.send({ message: 'Login successful' });
+  @UseFilters(HttpExceptionFilter)
+  async signIn(@Body() signInDto, @Res() res: Response) {
+    try {
+      const accessToken = await this.authService.signIn(
+        signInDto.username,
+        signInDto.password,
+      );
+
+      if (!accessToken) {
+        throw new UnauthorizedException('Invalid credentials');
+      }
+      res.cookie('accessToken', accessToken, {
+        httpOnly: true,
+        sameSite: 'strict',
+      });
+      return res.status(201).json({ message: 'test' });
+    } catch (error) {
+      throw error;
+    }
   }
 }

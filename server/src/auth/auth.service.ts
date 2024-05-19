@@ -13,8 +13,8 @@ export class AuthService {
     pass: string,
   ): Promise<{ access_token: string }> {
     const user = await this.usersService.getUser(username);
-    if (user?.password !== pass) {
-      throw new UnauthorizedException();
+    if (!user || user.password !== pass) {
+      throw new UnauthorizedException('Invalid credentials');
     }
 
     const payload = { username: user.username };
