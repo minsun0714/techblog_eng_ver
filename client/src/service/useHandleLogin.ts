@@ -1,11 +1,10 @@
 const useHandleLogin = () => {
 	const handleLogin = async (formData: FormData) => {
-		'use server';
-
 		const authInfo = {
 			username: formData.get('username'),
 			password: formData.get('password'),
 		};
+
 		try {
 			const response = await fetch('http://localhost:8000/auth/login', {
 				method: 'POST',
@@ -15,13 +14,10 @@ const useHandleLogin = () => {
 				body: JSON.stringify(authInfo),
 			});
 			if (!response.ok) {
-				const errorData = await response.json();
-				throw new Error(errorData.message || '비밀번호가 틀렸습니다.');
+				throw new Error();
 			}
-			const data = await response.json();
-			console.log('📢[page.tsx:21]: data: ', data.statusCode);
 		} catch (err) {
-			console.error(err.message);
+			alert('아이디 또는 비밀번호가 일치하지 않습니다.');
 		}
 	};
 	return handleLogin;
