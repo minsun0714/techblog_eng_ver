@@ -15,21 +15,21 @@ const categoryList = [
     title: 'Algorithm',
     children: [
       {
-        id: 0,
+        id: 1,
         title: 'Leetcode',
       },
       {
-        id: 1,
+        id: 2,
         title: 'Baekjoon',
       },
     ],
   },
   {
-    id: 1,
+    id: 3,
     title: 'Project',
     children: [
       {
-        id: 0,
+        id: 4,
         title: 'building my own tech blog',
       },
     ],
@@ -44,10 +44,10 @@ export class CategoryService {
     return categoryList;
   }
 
-  async getCategoryChildren(): Promise<Category[][]> {
-    const children = categoryList.map(
-      (category: Category & Children) => category.children,
-    );
+  async getCategoryChildren(id: number): Promise<Category[]> {
+    const children = categoryList.filter(
+      (category: Category & Children) => category.id === id,
+    )[0].children;
 
     return children;
   }

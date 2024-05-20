@@ -16,7 +16,7 @@ export class CategoryController {
 
   @Get('2')
   async getCategoryChildren(@Res() res: Response) {
-    const category = await this.categoryService.getCategoryChildren();
+    const category = await this.categoryService.getCategoryChildren(0);
     return res
       .status(200)
       .json({ message: 'category를 성공적으로 받았습니다.', category });
