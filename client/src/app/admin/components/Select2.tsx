@@ -14,17 +14,19 @@ type SelectType = {
 	options: (Category & Children)[];
 };
 
-const Select = ({ name, options }: SelectType) => {
+const Select1 = ({ name, options }: SelectType) => {
 	return (
 		<li className="flex w-full flex-col">
 			<label className="text-gray-mid-light">{name}</label>
 			<select className="h-10 rounded-sm border border-gray-mid-light focus:outline-gray">
 				{options?.map((option) => (
-					<option key={option.id}>{option.title}</option>
+					<option key={option.id} value={option.id}>
+						{option.title}
+					</option>
 				))}
 			</select>
 		</li>
 	);
 };
 
-export default Select;
+export default Select1;
