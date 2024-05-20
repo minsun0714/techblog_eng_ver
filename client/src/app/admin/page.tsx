@@ -4,17 +4,11 @@ import Button from '../(common)/components/Button';
 import useAuthStore from '../(common)/store/useAuthStore';
 import Form from './components/Form';
 import Input from './components/Input';
-import Select from './components/Select';
+import SelectBoxes from './components/SelectBoxes';
 import UpDownBtn from './components/UpDownBtn';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import MDEditor from '@uiw/react-md-editor';
-
-export type FormElements = {
-	title: string;
-	category1: string;
-	category2: string;
-};
 
 const AdminPage = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(true);
@@ -34,10 +28,7 @@ const AdminPage = () => {
 			{isOpen && (
 				<>
 					<Input />
-					<ul className="flex w-full flex-row gap-x-12 focus:outline-gray">
-						<Select name="category1" />
-						<Select name="category2" />
-					</ul>
+					<SelectBoxes />
 					<MDEditor value={value} onChange={setValue} />
 				</>
 			)}
