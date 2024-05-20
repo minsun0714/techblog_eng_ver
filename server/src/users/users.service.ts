@@ -8,7 +8,7 @@ export type User = {
 export class UsersService {
   private readonly user = {
     username: 'minsun',
-    password: 'changeme',
+    password: process.env.PASSWORD,
   };
 
   async getUser(username: string): Promise<User | undefined> {
