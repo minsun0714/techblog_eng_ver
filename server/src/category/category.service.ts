@@ -1,13 +1,16 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Category } from './category.entity';
 
-type Category = {
-  id: number;
-  title: string;
-};
+// type CategoryType = {
+//   id: number;
+//   title: string;
+// };
 
-type Children = {
-  children: Category[];
-};
+// type Children = {
+//   children: Category[];
+// };
 
 const categoryList = [
   {
@@ -38,17 +41,34 @@ const categoryList = [
 
 @Injectable()
 export class CategoryService {
-  constructor() {}
+  constructor(
+    @InjectRepository(Category)
+    private categoryRepository: Repository<Category>,
+  ) {}
 
-  async getCategory(): Promise<(Category & Children)[]> {
-    return categoryList;
+  async getCategory(): Promise<Category[]> {
+    return this.categoryRepository.find();
   }
 
-  async getCategoryChildren(id: number): Promise<Category[]> {
-    const children = categoryList.filter(
-      (category: Category & Children) => category.id === id,
-    )[0].children;
+  // async getCategoryChildren(id: number): Promise<Category[]> {
+  //   const children = categoryList.filter(
+  //     (category: Category & Children) => category.id === id,
+  //   )[0].children;
 
-    return children;
+  //   return children;
+  // }
+
+  async saveCategories(): Promise<void> {
+    for (const categoryData of categoryList) {
+      await this.saveCategory(categoryData);
+    }
+  }
+
+  private async saveCategory(categoryData: Category): Promise<void> {
+    const category = new Category();
+    category.id = categoryData.id;
+    category.title = categoryData.title;
+
+    await this.categoryRepository.save(category);
   }
 }
