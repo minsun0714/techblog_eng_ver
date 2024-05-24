@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as cookieParser from 'cookie-parser';
-import { CategoryService } from './category/category.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -11,8 +10,6 @@ async function bootstrap() {
     exposedHeaders: ['Authorization'],
   });
 
-  const categoryService = app.get(CategoryService);
-  await categoryService.saveCategories();
   app.use(cookieParser());
   await app.listen(8000);
 }
