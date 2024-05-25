@@ -9,7 +9,9 @@ const Input = () => {
 			<label className="text-gray-mid-light">title</label>
 			<input
 				value={title}
-				onChange={(e) => setTitle(e.currentTarget.value)}
+				onChange={(e) => {
+					setTitle(e.currentTarget.value);
+				}}
 				className="h-10 w-full rounded-sm border border-gray-mid-light p-3 focus:outline-gray"
 			/>
 		</div>
