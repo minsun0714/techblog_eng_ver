@@ -12,7 +12,7 @@ type Action = {
 
 const usePostingFieldStore = create<State & Action>((set) => ({
 	title: '',
-	categoryId: 0,
+	categoryId: -1,
 	setTitle: (title: State['title']) => set(() => ({ title })),
 	setCategoryId: (categoryId: State['categoryId']) =>
 		set(() => ({

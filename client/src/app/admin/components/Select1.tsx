@@ -23,6 +23,9 @@ const Select1 = ({ name, options, setCategoryId }: SelectType) => {
 				className="h-10 rounded-sm border border-gray-mid-light focus:outline-gray"
 				onChange={(e) => setCategoryId(Number(e.currentTarget.value))}
 			>
+				<option value={-1} key={-1} className="text-gray-light">
+					=== 선택 ===
+				</option>
 				{options?.map((option) => (
 					<option key={option.id} value={option.id}>
 						{option.title}
