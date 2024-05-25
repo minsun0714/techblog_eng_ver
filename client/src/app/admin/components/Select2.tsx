@@ -14,7 +14,7 @@ type SelectType = {
 	options: (Category & Children)[];
 };
 
-const Select1 = ({ name, options }: SelectType) => {
+const Select2 = ({ name, options }: SelectType) => {
 	return (
 		<li className="flex w-full flex-col">
 			<label className="text-gray-mid-light">{name}</label>
@@ -29,4 +29,4 @@ const Select1 = ({ name, options }: SelectType) => {
 	);
 };
 
-export default Select1;
+export default Select2;
