@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ArticlesService } from './articles.service';
 
 @Controller('articles')
@@ -18,5 +18,10 @@ export class ArticlesController {
   @Post()
   async postArticle(@Body() body) {
     return await this.articlesService.postArticle(body);
+  }
+
+  @Delete(':id')
+  async deleteArticleById(@Param() { id }) {
+    return await this.articlesService.deleteArticleById(id);
   }
 }

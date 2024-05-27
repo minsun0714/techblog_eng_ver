@@ -19,11 +19,10 @@ export class ArticlesService {
   }
 
   async getArticleById(id: number): Promise<Articles> {
-    const article = await this.articleRepository.findOne({
+    return await this.articleRepository.findOne({
       where: { id },
       relations: ['category1', 'category2'],
     });
-    return article;
   }
 
   async postArticle(createArticleDto: CreateArticleDto): Promise<Articles> {
@@ -49,5 +48,9 @@ export class ArticlesService {
 
     const savedArticle = await this.articleRepository.save(article);
     return savedArticle;
+  }
+
+  async deleteArticleById(id: number): Promise<any> {
+    return await this.articleRepository.delete({ id });
   }
 }
