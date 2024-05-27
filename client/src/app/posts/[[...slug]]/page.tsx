@@ -13,7 +13,7 @@ const PostsPage = async () => {
 	const articles = await getArticles();
 	return (
 		<ul className="flex flex-col items-center justify-center gap-y-96 pb-40 pt-96">
-			{articles?.map((article: IArticle) => {
+			{articles?.reverse().map((article: IArticle) => {
 				return (
 					<li key={article.id}>
 						<Card isBig={true} imgUrl={DummyImg} title={article.title} />
