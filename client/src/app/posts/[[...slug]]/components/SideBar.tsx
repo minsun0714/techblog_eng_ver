@@ -9,7 +9,7 @@ export type SideBarProps = {
 
 const SideBar = ({ menuData }: SideBarProps) => {
 	return (
-		<aside className="sticky top-16 hidden h-screen flex-col whitespace-nowrap bg-black text-gray-light xl:flex xl:min-w-[400px] xl:justify-start">
+		<aside className="sticky top-16 hidden h-[calc(100vh-80px)] flex-col whitespace-nowrap bg-black text-gray-light xl:flex xl:min-w-[400px] xl:justify-start">
 			<ul className="mx-16 my-24">
 				{menuData.map(([menu, subMenuList]: MenuDataTuple, i: number) => {
 					const menuPath = menu.toLowerCase();
