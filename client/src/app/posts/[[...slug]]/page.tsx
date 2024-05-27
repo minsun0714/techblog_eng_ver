@@ -1,3 +1,5 @@
+import { Route } from 'next';
+import Link from 'next/link';
 import React from 'react';
 import Card from '@/app/(common)/components/Card';
 import { getArticles } from '@/service/useGetArticles';
@@ -16,7 +18,9 @@ const PostsPage = async () => {
 			{articles?.reverse().map((article: IArticle) => {
 				return (
 					<li key={article.id}>
-						<Card isBig={true} imgUrl={DummyImg} title={article.title} />
+						<Link href={`/post/${article.id}` as Route}>
+							<Card isBig={true} imgUrl={DummyImg} title={article.title} />
+						</Link>
 					</li>
 				);
 			})}
