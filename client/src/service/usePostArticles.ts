@@ -1,6 +1,6 @@
 import usePostingFieldStore from '@/app/admin/store/usePostingFieldStore';
 
-export const useGetArticles = () => {
+export const usePostArticle = () => {
 	const { title, categoryId, categoryChildId, content } =
 		usePostingFieldStore();
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
