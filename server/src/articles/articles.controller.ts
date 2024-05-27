@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ArticlesService } from './articles.service';
 
 @Controller('articles')
@@ -10,10 +10,13 @@ export class ArticlesController {
     return await this.articlesService.getAllArticles();
   }
 
+  @Get(':id')
+  async getArticleById(@Param() { id }) {
+    return await this.articlesService.getArticleById(id);
+  }
+
   @Post()
   async postArticle(@Body() body) {
-    console.log(body);
-    console.log('📢[articles.controller.ts:11]: body: ', body);
     return await this.articlesService.postArticle(body);
   }
 }

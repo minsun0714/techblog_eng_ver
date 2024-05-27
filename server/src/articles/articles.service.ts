@@ -18,6 +18,14 @@ export class ArticlesService {
     return await this.articleRepository.find();
   }
 
+  async getArticleById(id: number): Promise<Articles> {
+    const article = await this.articleRepository.findOne({
+      where: { id },
+      relations: ['category1', 'category2'],
+    });
+    return article;
+  }
+
   async postArticle(createArticleDto: CreateArticleDto): Promise<Articles> {
     const { title, category1Id, category2Id, content } = createArticleDto;
 
