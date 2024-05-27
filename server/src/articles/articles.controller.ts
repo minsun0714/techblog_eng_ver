@@ -6,8 +6,9 @@ export class ArticlesController {
   constructor(private articlesService: ArticlesService) {}
 
   @Post()
-  async postArticles(@Body() body) {
+  async postArticle(@Body() body) {
     console.log(body);
-    return await this.articlesService.postArticles(body);
+    console.log('📢[articles.controller.ts:11]: body: ', body);
+    return await this.articlesService.postArticle(body);
   }
 }

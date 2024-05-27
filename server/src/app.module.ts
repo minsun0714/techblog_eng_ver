@@ -8,6 +8,7 @@ import { CategoryModule } from './category/category.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Category } from './category/category.entity';
 import { ArticlesModule } from './articles/articles.module';
+import { Articles } from './articles/articles.entity';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { ArticlesModule } from './articles/articles.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [Category],
+      entities: [Category, Articles],
       synchronize: true,
     }),
     ArticlesModule,

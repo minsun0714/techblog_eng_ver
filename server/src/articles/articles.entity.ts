@@ -1,5 +1,11 @@
 import { Category } from 'src/category/category.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity({ name: 'articles' })
 export class Articles {
@@ -9,12 +15,20 @@ export class Articles {
   @Column()
   title: string;
 
-  @ManyToOne(() => Articles)
-  @Column()
+  @ManyToOne(() => Category)
+  @JoinColumn({
+    name: 'category1_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'FK_category1',
+  })
   category1: Category;
 
-  @ManyToOne(() => Articles)
-  @Column()
+  @ManyToOne(() => Category)
+  @JoinColumn({
+    name: 'category2_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'FK_category2',
+  })
   category2: Category;
 
   @Column()
