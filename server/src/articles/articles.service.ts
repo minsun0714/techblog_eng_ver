@@ -14,7 +14,11 @@ export class ArticlesService {
     private categoryRepository: Repository<Category>,
   ) {}
 
-  async postArticle(createArticleDto: CreateArticleDto): Promise<string> {
+  async getAllArticles(): Promise<Articles[]> {
+    return await this.articleRepository.find();
+  }
+
+  async postArticle(createArticleDto: CreateArticleDto): Promise<Articles> {
     const { title, category1Id, category2Id, content } = createArticleDto;
 
     const category1 = await this.categoryRepository.findOne({
@@ -23,11 +27,6 @@ export class ArticlesService {
     const category2 = await this.categoryRepository.findOne({
       where: { id: category2Id },
     });
-    console.log(
-      '📢[articles.service.ts:21]: category1: ',
-      category1,
-      category2,
-    );
 
     if (!category1 || !category2) {
       throw new Error('Category not found');
@@ -41,7 +40,6 @@ export class ArticlesService {
     });
 
     const savedArticle = await this.articleRepository.save(article);
-    console.log('📢[articles.service.ts:29]: savedArticle: ', savedArticle);
-    return '여기다가 post 하시면 됩니다!';
+    return savedArticle;
   }
 }
