@@ -5,7 +5,9 @@ interface IArticle {
 }
 
 export const getArticles = async (): Promise<IArticle[]> => {
-	const response = await fetch('http://localhost:8000/articles');
+	const response = await fetch('http://localhost:8000/articles', {
+		cache: 'no-store',
+	});
 	if (!response.ok) {
 		throw new Error('Failed to fetch articles');
 	}

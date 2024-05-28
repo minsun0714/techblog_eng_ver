@@ -29,6 +29,7 @@ export const usePostArticle = () => {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		await trigger();
+		router.refresh();
 	};
 	return handleSubmit;
 };
