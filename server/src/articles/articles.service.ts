@@ -15,7 +15,10 @@ export class ArticlesService {
   ) {}
 
   async getAllArticles(): Promise<Articles[]> {
-    return await this.articleRepository.find();
+    return await this.articleRepository.find({
+      select: ['id', 'title', 'category1', 'category2'],
+      relations: ['category1', 'category2'],
+    });
   }
 
   async getArticleById(id: number): Promise<Articles> {
