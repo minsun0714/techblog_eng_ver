@@ -1,8 +1,8 @@
+import { Category } from './../category/category.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Articles } from './articles.entity';
-import { Category } from 'src/category/category.entity';
 import { CreateArticleDto } from './articles.dto';
 
 @Injectable()
@@ -15,16 +15,21 @@ export class ArticlesService {
   ) {}
 
   async getAllArticles(
-    category1: number,
-    category2: number,
+    category1: string,
+    category2: string,
   ): Promise<Articles[]> {
-    const whereConditions = [];
+    const whereConditions: {
+      category1?: { title: string };
+      category2?: { title: string };
+    } = {};
+
     if (category1) {
-      whereConditions.push({ category1: { title: category1 } });
+      whereConditions.category1 = { title: category1 };
     }
     if (category2) {
-      whereConditions.push({ category2: { title: category2 } });
+      whereConditions.category2 = { title: category2 };
     }
+    console.log(category1, category2);
 
     const articles = await this.articleRepository.find({
       where: whereConditions,
