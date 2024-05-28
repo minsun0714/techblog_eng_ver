@@ -1,11 +1,11 @@
+import RecentCard from './components/RecentCard';
 import React from 'react';
-import Card from '@/app/(common)/components/Card';
 import DummyImage from 'public/dummyImg.png';
 
 const DummyCards = () => {
 	return (
 		<li className="flex flex-col items-center justify-center">
-			<Card imgUrl={DummyImage} title="card" />
+			<RecentCard imgUrl={DummyImage} title="card" />
 		</li>
 	);
 };

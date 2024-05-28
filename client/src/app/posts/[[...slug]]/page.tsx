@@ -1,9 +1,7 @@
-import { Route } from 'next';
-import Link from 'next/link';
+// import CardComponent from './components/CardComponent';
+import dynamic from 'next/dynamic';
 import React from 'react';
-import Card from '@/app/(common)/components/Card';
 import { getArticles } from '@/service/useGetArticles';
-import DummyImg from 'public/dummyImg.png';
 
 interface IArticle {
 	id: number;
@@ -11,16 +9,18 @@ interface IArticle {
 	content: string;
 }
 
+const CardComponent = dynamic(() => import('./components/CardComponent'), {
+	loading: () => <p>Loading...</p>,
+});
+
 const PostsPage = async () => {
 	const articles = await getArticles();
 	return (
-		<ul className="flex flex-col items-center justify-center gap-y-96 pb-40 pt-96">
+		<ul className="flex flex-col items-center justify-center gap-y-48 pb-40 pt-96">
 			{articles?.reverse().map((article: IArticle) => {
 				return (
 					<li key={article.id}>
-						<Link href={`/post/${article.id}` as Route}>
-							<Card isBig={true} imgUrl={DummyImg} title={article.title} />
-						</Link>
+						<CardComponent id={article.id} title={article.title} />
 					</li>
 				);
 			})}

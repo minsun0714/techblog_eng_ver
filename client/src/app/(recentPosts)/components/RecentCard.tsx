@@ -2,17 +2,15 @@ import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
 type CardProps = {
-	isBig?: boolean;
 	imgUrl: StaticImageData;
 	title: string;
 };
 
-const Card = ({ isBig, imgUrl, title }: CardProps) => {
+const RecentCard = ({ imgUrl, title }: CardProps) => {
 	return (
 		<div
 			className={
-				'relative flex flex-col justify-end' +
-				` ${isBig ? 'h-[400px]' : 'h-[220px]'} ${isBig ? 'w-screen' : 'w-[382px]'} ${isBig ? 'lg:w-[972px]' : 'lg:w-[382px]'} `
+				'relative flex h-[220px] w-[382px] flex-col justify-end lg:w-[382px]'
 			}
 		>
 			<Image
@@ -23,15 +21,10 @@ const Card = ({ isBig, imgUrl, title }: CardProps) => {
 			<div className="absolute rounded-b-2xl border border-gray-light bg-white">
 				<div
 					className={
-						'relative flex h-24 flex-col items-center justify-stretch pt-3' +
-						` ${isBig && 'md:h-32'} ${isBig && 'lg:h-40'} ${isBig ? 'w-[970px]' : 'w-[380px]'} `
+						'relative flex h-24 w-[380px] flex-col items-center justify-stretch pt-3'
 					}
 				>
-					<label
-						className={
-							'absolute pl-10' + ` ${isBig ? 'w-[970px]' : 'w-[382px]'} `
-						}
-					>
+					<label className={'absolute w-[382px] pl-10'}>
 						{title.length <= 60 ? title : title.slice(0, 60) + '..'}
 					</label>
 				</div>
@@ -40,4 +33,4 @@ const Card = ({ isBig, imgUrl, title }: CardProps) => {
 	);
 };
 
-export default Card;
+export default RecentCard;
