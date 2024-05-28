@@ -20,10 +20,10 @@ export class ArticlesService {
   ): Promise<Articles[]> {
     const whereConditions = [];
     if (category1) {
-      whereConditions.push({ category1: { id: category1 } });
+      whereConditions.push({ category1: { title: category1 } });
     }
     if (category2) {
-      whereConditions.push({ category2: { id: category2 } });
+      whereConditions.push({ category2: { title: category2 } });
     }
 
     const articles = await this.articleRepository.find({
