@@ -10,7 +10,6 @@ interface IArticle {
 }
 
 const PostsPage = async ({ params }: { params: { slug: string[] } }) => {
-	console.log('📢[page.tsx:13]: params: ', params);
 	const articles = await getArticles(params.slug);
 	return (
 		<ul className="flex w-2/3 flex-col items-center justify-center gap-y-2 py-40">
