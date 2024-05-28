@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { ArticlesService } from './articles.service';
 
 @Controller('articles')
@@ -6,8 +14,8 @@ export class ArticlesController {
   constructor(private articlesService: ArticlesService) {}
 
   @Get()
-  async getAllArticles() {
-    return await this.articlesService.getAllArticles();
+  async getAllArticles(@Query() { category1, category2 }) {
+    return await this.articlesService.getAllArticles(category1, category2);
   }
 
   @Get(':id')

@@ -14,11 +14,24 @@ export class ArticlesService {
     private categoryRepository: Repository<Category>,
   ) {}
 
-  async getAllArticles(): Promise<Articles[]> {
-    return await this.articleRepository.find({
+  async getAllArticles(
+    category1: number,
+    category2: number,
+  ): Promise<Articles[]> {
+    const whereConditions = [];
+    if (category1) {
+      whereConditions.push({ category1: { id: category1 } });
+    }
+    if (category2) {
+      whereConditions.push({ category2: { id: category2 } });
+    }
+
+    const articles = await this.articleRepository.find({
+      where: whereConditions,
       select: ['id', 'title', 'category1', 'category2'],
       relations: ['category1', 'category2'],
     });
+    return articles;
   }
 
   async getArticleById(id: number): Promise<Articles> {
