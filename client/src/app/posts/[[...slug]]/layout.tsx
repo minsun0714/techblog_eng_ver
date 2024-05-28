@@ -12,7 +12,9 @@ const RecentPostsLayout = async ({
 	return (
 		<div className="flex w-screen">
 			<SideBar menuData={menuData} />
-			<main className="flex w-full flex-col">{children}</main>
+			<main className="flex w-screen flex-col items-center justify-center">
+				{children}
+			</main>
 		</div>
 	);
 };
