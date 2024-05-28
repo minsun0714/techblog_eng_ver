@@ -17,7 +17,7 @@ const PostsPage = async () => {
 				return (
 					<div className="w-full" key={article.id}>
 						<Link href={`/post/${article.id}` as Route}>
-							<li className="flex h-20 items-center justify-start rounded border-2 border-gray pl-4 text-gray">
+							<li className="flex h-20 items-center justify-center rounded border-2 border-gray pl-4 text-gray">
 								<label className="cursor-pointer">{article.title}</label>
 							</li>
 						</Link>
