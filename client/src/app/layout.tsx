@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import React from 'react';
+import './globals.css';
 import Header from '@/(common)/components/Header';
-import '@/app/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,9 +21,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={`${inter.className}`}>
 				<Header />
-				<main>{children}</main>
+				<main className="w-full">{children}</main>
 			</body>
 		</html>
 	);

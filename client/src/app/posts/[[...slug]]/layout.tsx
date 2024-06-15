@@ -10,9 +10,9 @@ const RecentPostsLayout = async ({
 	const menuData = Object.entries(data);
 
 	return (
-		<div className="flex w-screen">
+		<div className="relative flex h-full">
 			<SideBar menuData={menuData} />
-			<main className="flex w-screen flex-col items-center justify-center">
+			<main className="flex h-full w-full flex-col items-center justify-center">
 				{children}
 			</main>
 		</div>

@@ -12,7 +12,7 @@ interface IArticle {
 const PostsPage = async ({ params }: { params: { slug: string[] } }) => {
 	const articles = await getArticles(params.slug);
 	return (
-		<ul className="flex w-2/3 flex-col items-center justify-center gap-y-2 py-40">
+		<ul className="my-40 flex h-full w-2/3 flex-col items-center justify-start gap-y-2">
 			{articles?.reverse().map((article: IArticle) => {
 				return (
 					<div className="w-full" key={article.id}>
