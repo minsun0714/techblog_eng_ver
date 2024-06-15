@@ -1,6 +1,6 @@
-import { NavItems } from '../util/enum';
 import { Route } from 'next';
 import Link from 'next/link';
+import { NavItems } from '@/(common)/util/enum';
 
 const Header = () => {
 	return (

@@ -1,7 +1,7 @@
 'use client';
 
-import Button from '../(common)/components/Button';
-import Input from './components/Input';
+import Button from '@/(common)/components/Button';
+import Input from '@/login/components/Input';
 import useHandleLogin from '@/service/useHandleLogin';
 
 const AuthPage = () => {

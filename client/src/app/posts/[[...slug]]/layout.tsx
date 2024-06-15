@@ -1,4 +1,4 @@
-import SideBar from '@/app/posts/[[...slug]]/components/SideBar';
+import SideBar from '@/posts/[[...slug]]/components/SideBar';
 import getSideMenuData from '@/service/fetchMenu';
 
 const RecentPostsLayout = async ({

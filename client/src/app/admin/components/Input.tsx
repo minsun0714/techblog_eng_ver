@@ -1,5 +1,5 @@
 import React from 'react';
-import usePostingFieldStore from '@/app/admin/store/usePostingFieldStore';
+import usePostingFieldStore from '@/admin/store/usePostingFieldStore';
 
 const Input = () => {
 	const { title, setTitle } = usePostingFieldStore();
