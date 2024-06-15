@@ -4,7 +4,7 @@ import Button from '../(common)/components/Button';
 import useAuthStore from '../(common)/store/useAuthStore';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import { Form } from '@/(common)/components/Form';
+import Form from '@/admin/components/Form';
 import Input from '@/admin/components/Input';
 import SelectBoxes from '@/admin/components/SelectBoxes';
 import UpDownBtn from '@/admin/components/UpDownBtn';
