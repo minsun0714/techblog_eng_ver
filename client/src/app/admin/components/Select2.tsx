@@ -1,5 +1,5 @@
-import usePostingFieldStore from '../store/usePostingFieldStore';
 import React from 'react';
+import usePostingFieldStore from '@/admin/store/usePostingFieldStore';
 
 type Category = {
 	id: number;

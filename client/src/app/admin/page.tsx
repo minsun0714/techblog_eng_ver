@@ -1,13 +1,13 @@
 'use client';
 
-import Button from '../(common)/components/Button';
-import useAuthStore from '../(common)/store/useAuthStore';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import Button from '@/(common)/components/Button';
 import Form from '@/admin/components/Form';
 import Input from '@/admin/components/Input';
 import SelectBoxes from '@/admin/components/SelectBoxes';
 import UpDownBtn from '@/admin/components/UpDownBtn';
+import useAuthStore from '@/(common)/store/useAuthStore';
 import usePostingFieldStore from '@/admin/store/usePostingFieldStore';
 import MDEditor from '@uiw/react-md-editor';
 

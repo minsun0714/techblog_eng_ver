@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import useAuthStore from '@/app/(common)/store/useAuthStore';
+import useAuthStore from '@/(common)/store/useAuthStore';
 
 const useHandleLogin = () => {
 	const router = useRouter();

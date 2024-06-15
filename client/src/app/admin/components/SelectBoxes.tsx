@@ -1,7 +1,7 @@
-import usePostingFieldStore from '../store/usePostingFieldStore';
-import Select1 from './Select1';
-import Select2 from './Select2';
 import { useEffect } from 'react';
+import Select1 from '@/admin/components/Select1';
+import Select2 from '@/admin/components/Select2';
+import usePostingFieldStore from '@/admin/store/usePostingFieldStore';
 import {
 	useGetCategory,
 	useGetCategoryChildren,

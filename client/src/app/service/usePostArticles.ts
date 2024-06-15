@@ -1,6 +1,6 @@
-import useSWRMutation from 'swr/mutation';
 import { Route } from 'next';
 import { useRouter } from 'next/navigation';
+import useSWRMutation from 'swr/mutation';
 import usePostingFieldStore from '@/admin/store/usePostingFieldStore';
 
 export const usePostArticle = () => {

@@ -1,5 +1,5 @@
-import RecentCard from './components/RecentCard';
 import React from 'react';
+import RecentCard from '@/(recentPosts)/components/RecentCard';
 import DummyImage from 'public/dummyImg.png';
 
 const DummyCards = () => {
