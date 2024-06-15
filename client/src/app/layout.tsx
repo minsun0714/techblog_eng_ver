@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
 	title: 'Jasimine_tech blog',
 	description: 'tech blog',
+	icons: {
+		icon: 'Favicon.jpg',
+	},
 };
 
 export default function RootLayout({
